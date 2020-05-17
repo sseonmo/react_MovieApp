@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {API_URL, API_KEY, IMAGE_BASE_URL} from '../../Config';
 import MainImage from './Sections/MainImage';
 import GridCards from '../commons/GridCards';
@@ -51,6 +51,7 @@ function LandingPage() {
 					{Movies && Movies.map((movie, index) => (
 						<React.Fragment key={index}>
 							<GridCards
+								landingpage
 								image={movie.poster_path
 									? `${IMAGE_BASE_URL}w500${movie.poster_path}`
 									: null}
