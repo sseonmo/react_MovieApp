@@ -40,11 +40,14 @@ function MovieDetail(props) {
 		setActorToggle(!ActorToggle)
 	};
 
+	const imagePath = `${IMAGE_BASE_URL}w1280${Movie.backdrop_path}`;
+	console.log(imagePath);
 	return (
 		<div>
 			{/*	Header */}
 			<MainImage
-				image={`${IMAGE_BASE_URL}w1280${Movie.backdrop_path}`}
+				// image={`${IMAGE_BASE_URL}w1280${Movie.backdrop_path}`}
+				image={ imagePath}
 				title={`${Movie.title}`}
 				description={`${Movie.overview}`}
 			/>
@@ -70,7 +73,7 @@ function MovieDetail(props) {
 							<React.Fragment key={index}>
 								<GridCards
 									image={cast.profile_path
-										? `${IMAGE_BASE_URL}w500${cast.profile_path}`
+											? `${IMAGE_BASE_URL}w500${cast.profile_path}`
 										: null}
 									characterName={cast.name}
 								/>
